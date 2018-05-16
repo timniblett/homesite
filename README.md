@@ -1,2 +1,2 @@
 # homesite
-Hone Website
+Home Website
