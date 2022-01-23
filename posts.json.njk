@@ -1,0 +1,14 @@
+---
+permalink: posts.json
+excludeFromSitemap: true
+---
+[
+{% for post in collections.posts %}
+    {
+        "title": "{{ post.data.title }}",
+        "date": "{{ post.data.date }}",
+        "summary": "{{ post.data.summary }}"
+    }
+    {%- if not loop.last -%},{%- endif -%}
+{% endfor %}
+]

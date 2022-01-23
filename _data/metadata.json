@@ -1,0 +1,17 @@
+{
+  "title": "Tim Niblett's Blog",
+  "url": "https://blog.cilogi.com",
+  "author": {
+    "name": "Tim Niblett",
+    "email": "tim.niblett@cilogi.com",
+    "github": "https://github.com/cilogi",
+    "twitter": "@tim_niblett"
+  },
+  "language": "en",
+  "license_type": "CC-BY 4.0",
+  "license_link": "https://creativecommons.org/licenses/by/4.0/",
+  "repository": {
+    "name": "blog",
+    "url": "https://github.com/cilogi/blog"
+  }
+}

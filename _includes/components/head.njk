@@ -1,0 +1,36 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="{% if summary %} {{ summary }}{% else %}{{ metadata.description }}{% endif %}">
+  <meta name="keywords" content="{{ tags }}">
+
+  <meta property="og:title" content="{{ title or renderData.title or metadata.title }}" /> 
+  <meta property="og:type" content="{{ type }}" />
+  <meta property="og:url" content="{{ metadata.url }}{{ page.url }}" />
+  {% if image %}
+  <meta property="og:image" content="{{ metadata.url }}/posts/images/{{ image }}" />
+  {% endif %}
+  <meta property="og:description" content="{% if summary %}{{ summary }}{% else %}{{ metadata.description }}{% endif %}}"/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" contents = "{{ title or renderData.title or metadata.title }}">
+  {% if image %}
+  <meta name="twitter:image" contents = "{{ metadata.url }}/posts/images/{{ image }}">"
+  {% endif %}
+  <meta name="twitter:site" content="{{ metadata.twitter }}">
+  <meta name="twitter:description" content="{% if summary %}{{ summary }}{% else %}{{ metadata.description }}{% endif %}}">
+
+  <title>{{ title or renderData.title or metadata.title }}</title>
+  <link rel="license" href="{{ metadata.license_link }}">
+  <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {% set css %}
+    {% include "assets/css/inline.css" %}
+  {% endset %}
+  <style>{{ css | cssmin | safe }}</style>
+  {% set js %}
+    {% include "assets/js/inline.js" %}
+  {% endset %}
+  <script>{{ js | jsmin | safe }}</script>
+</head>
